@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Pasqua</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .countdown {
+            font-size: 40px;
+            margin-top: 50px;
+        }
+        .button {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: white;
+            background-color: grey;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Countdown a Pasqua</h1>
+    <div class="countdown" id="pasquaCountdown"></div>
+    <p>Festeggia la rinascita e la gioia della Pasqua! Il countdown ti guiderà verso questa giornata speciale.</p>
+
+    <!-- Bottone per tornare alla home page -->
+    <a href="index.html">
+        <button class="button">Torna alla pagina principale</button>
+    </a>
+
+    <script>
+        function countdown(date) {
+            const now = new Date().getTime();
+            const distance = date - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            return `${days} giorni ${hours} ore ${minutes} minuti ${seconds} secondi`;
+        }
+
+        function updateCountdown() {
+            const pasquaDate = new Date("Apr 7, 2024 00:00:00").getTime();
+            document.getElementById("pasquaCountdown").innerHTML = countdown(pasquaDate);
+        }
+
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>

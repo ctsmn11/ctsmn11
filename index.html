@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Eventi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            height: 150vh; /* Per forzare lo scroll */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .button {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button.red {
+            background-color: red;
+        }
+        .button.blue {
+            background-color: blue;
+        }
+        .header, .footer {
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Bottone Rosso (in cima alla pagina) -->
+        <div class="header">
+            <a href="natale.html">
+                <button class="button red">Vai al Countdown di Natale</button>
+            </a>
+        </div>
+
+        <!-- Spazio per scrollare -->
+
+        <!-- Bottone Blu (in fondo alla pagina) -->
+        <div class="footer">
+            <a href="pasqua.html">
+                <button class="button blue">Vai al Countdown di Pasqua</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
